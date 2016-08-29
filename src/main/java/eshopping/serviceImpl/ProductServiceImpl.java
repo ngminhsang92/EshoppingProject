@@ -17,7 +17,7 @@ public class ProductServiceImpl implements IProductService {
         return productDao.getList();
     }
 
-    public Product getProductById(int id) {
+    public Product getProductById(Integer id) {
         return productDao.getOneById(id);
     }
 
@@ -35,5 +35,9 @@ public class ProductServiceImpl implements IProductService {
 
     public List<Product> getRecentProducts() {
         return productDao.getRecentProducts();
+    }
+
+    public List<Product> getProductByCategoryId(Integer categoryId) {
+        return productDao.getProductByCategoryId(categoryId);
     }
 }

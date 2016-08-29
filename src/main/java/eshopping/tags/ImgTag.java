@@ -13,19 +13,21 @@ import java.sql.Blob;
 
 public class ImgTag extends SimpleTagSupport {
 
-	private Integer id;
+	private String id;
 
 	private String height;
 
 	private String width;
 
+	private String cssClass;
+
 	private Blob blob;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -51,6 +53,14 @@ public class ImgTag extends SimpleTagSupport {
 
 	public void setWidth(String width) {
 		this.width = width;
+	}
+
+	public String getCssClass() {
+		return cssClass;
+	}
+
+	public void setCssClass(String cssClass) {
+		this.cssClass = cssClass;
 	}
 
 	@Override
@@ -88,7 +98,7 @@ public class ImgTag extends SimpleTagSupport {
 
 		
 		getJspContext().getOut()
-				.write("<img src='" + request.getContextPath() + "/resources/images/" + id + ".png' alt='image' style='"+style+"' />");
+				.write("<img src='" + request.getContextPath() + "/resources/images/" + id + ".png' alt='image' class='"+cssClass+ "' style='"+style+"' />");
 	}
 
 }

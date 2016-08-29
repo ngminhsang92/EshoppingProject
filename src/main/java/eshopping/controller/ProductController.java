@@ -34,12 +34,19 @@ public class ProductController {
         return "viewProduct";
     }
 
-    @RequestMapping("/productList")
-    public String getProductByCategory(@RequestParam(name="searchCondition", required=false ) String searchCondition, Model model){
+    @RequestMapping("/search")
+    public String getProductBySearch(@RequestParam(name="searchCondition", required=false ) String searchCondition, Model model){
         List<Product> products = productService.getProductList();
         model.addAttribute("products", products);
         model.addAttribute("searchCondition", searchCondition);
 
+        return "productList";
+    }
+
+    @RequestMapping("/productList")
+    public String getProductByCategory(@RequestParam(name="category", required=false ) String categoryId, Model model){
+        List<Product> products = productService.getProductByCategoryId(Integer.valueOf(categoryId));
+        model.addAttribute("products", products);
         return "productList";
     }
 

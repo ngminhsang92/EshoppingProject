@@ -1,6 +1,8 @@
 package eshopping.controller;
 
+import eshopping.domain.Category;
 import eshopping.domain.Product;
+import eshopping.service.ICategoryService;
 import eshopping.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,11 +17,15 @@ public class HomeController {
     @Autowired
     private IProductService productService;
 
+    @Autowired
+    private ICategoryService categoryService;
 
     @RequestMapping("/")
     public String home(Model model){
         List<Product> products = productService.getRecentProducts();
+        List<Category> categories = categoryService.getCategoryList();
         model.addAttribute("products", products);
+        model.addAttribute("categories", categories);
         return "home";
     }
 

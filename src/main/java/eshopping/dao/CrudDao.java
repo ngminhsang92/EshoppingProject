@@ -5,7 +5,7 @@ import java.util.List;
 public interface CrudDao<E,I> {
     List<E> getList();
 
-    E getOneById(int id);
+    E getOneById(I id);
 
     void add(E domain);
 

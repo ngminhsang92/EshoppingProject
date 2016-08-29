@@ -12,9 +12,14 @@
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img class="first-slide home-image" src="<c:url value="/resources/images/back1.jpg" />" alt="First slide">
-                </div>
+                <c:set var="flag" value="active"/>
+                <c:forEach items="${categories}" var="category">
+                    <div class="item ${flag}">
+                        <imgtag:imgTag blob="${category.imagebytes}"  id="category_${category.categoryId}" cssClass="first-slide home-image" height="140" width="140"/>
+                    </div>
+                    <c:set var="flag" value=""/>
+                </c:forEach>
+
                 <div class="item">
                     <img class="second-slide home-image" src="<c:url value="/resources/images/back2.jpg" />" alt="Second slide">
                 </div>
@@ -42,8 +47,18 @@
     	<!-- Three columns of text below the carousel -->
             <h2>Categories:</h2>
             <div class="row">
+                <c:forEach items="${categories}" var="category">
+                    <div class="col-lg-4">
+                        <a class="btn btn-default" href="<c:url value="/product/productList?category=${category.categoryId}" />" role="button">
+                            <imgtag:imgTag blob="${category.imagebytes}"  id="category_${category.categoryId}" height="140" width="140"/>
+                        </a>
+
+                        <h2>test</h2>
+
+                    </div>
+                </c:forEach>
                 <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Television" />" role="button">
+                    <a class="btn btn-default" href="<c:url value="/product/productList" />" role="button">
                         <img class="img-circle" src="<c:url value="/resources/images/television.jpg"/>" alt="Instrument Image" width="140" height="140">
                     </a>
 
@@ -54,7 +69,7 @@
 
 
                 <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Computers" />" role="button">
+                    <a class="btn btn-default" href="<c:url value="/product/productList?category=Computers" />" role="button">
                         <img class="img-circle" src="<c:url value="/resources/images/notebook.jpg"/>" alt="Instrument Image" width="140" height="140">
                     </a>
 

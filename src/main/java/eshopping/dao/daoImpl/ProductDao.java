@@ -25,7 +25,7 @@ public class ProductDao implements IProductDao {
         return productList;
     }
 
-    public Product getOneById(int id) {
+    public Product getOneById(Integer id) {
         Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);
         //HibernateStatisticUtil.printStatistics(sessionFactory);
@@ -58,6 +58,15 @@ public class ProductDao implements IProductDao {
         List<Product> productList = query.list();
         session.flush();
 
+        return productList;
+    }
+
+    public List<Product> getProductByCategoryId(Integer categoryId) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product p where p.category.categoryId = :category_id");
+        query.setParameter("category_id",categoryId);
+        List<Product> productList = query.list();
+        session.flush();
         return productList;
     }
 }
