@@ -28,5 +28,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="/estore"/>
+	<classpathentry kind="lib" path="/Users/Deepak/.m2/repository/org/springframework/amqp/spring-rabbit/1.4.5.RELEASE/spring-rabbit-1.4.5.RELEASE.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework.amqp"/>
+			<attribute name="maven.artifactId" value="spring-rabbit"/>
+			<attribute name="maven.version" value="1.4.5.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
