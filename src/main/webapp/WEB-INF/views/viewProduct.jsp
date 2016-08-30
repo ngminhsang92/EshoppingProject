@@ -16,7 +16,7 @@
         <div class="container" ng-app = "cartApp">
             <div class="row">
                 <div class="col-md-5">
-					<imgtag:imgTag blob="${product.imagebytes}"  id="${product.productId}"/>
+					<imgtag:imgTag blob="${product.imagebytes}"  id="product_${product.productId}"/>
                 </div>
                 <div class="col-md-5">
                     <h3>${product.productName}</h3>

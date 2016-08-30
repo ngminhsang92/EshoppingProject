@@ -92,7 +92,7 @@ public class AdminCategoryController {
                                   HttpServletRequest request) {
 
         if (result.hasErrors()) {
-            return "editCategory";
+            return "admineditCategory";
         }
 
         MultipartFile coverImage = category.getCoverImage();
@@ -108,7 +108,7 @@ public class AdminCategoryController {
                 e.printStackTrace();
             }
 
-            path = Paths.get(rootDirectory + "/WEB-INF/resources/images/category" + category.getCategoryId() + ".png");
+            path = Paths.get(rootDirectory + "/WEB-INF/resources/images/category_" + category.getCategoryId() + ".png");
 
             try {
                 File img = new File(path.toString());
@@ -121,13 +121,13 @@ public class AdminCategoryController {
 
         categoryService.editCategory(category);
 
-        return "redirect:/admin/CategoryList/all";
+        return "redirect:/admin/categoryList/all";
     }
 
     @RequestMapping("/category/deleteCategory/{id}")
     public String deleteCategory(@PathVariable int id, Model model, HttpServletRequest request) {
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/category" + id + ".png");
+        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/category_" + id + ".png");
 
         if (Files.exists(path)) {
             try {

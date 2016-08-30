@@ -97,7 +97,7 @@
 	             <c:forEach items="${products}" var="product">
 	                   <div class="col-lg-4">
 		                    <a class="btn btn-default" href="<c:url value="/product/viewProduct/${product.productId}" />" role="button">
-		                       <imgtag:imgTag blob="${product.imagebytes}"  id="${product.productId}" height="140" width="140"/>
+		                       <imgtag:imgTag blob="${product.imagebytes}"  id="product_${product.productId}" height="140" width="140"/>
 		                    </a>
 		
 		                    <h2>${product.productName}</h2>

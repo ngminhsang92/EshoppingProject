@@ -36,7 +36,7 @@
             </thead>
             <c:forEach items="${products}" var="product">
                 <tr>
-                    <td> <a class="btn btn-default" href="<c:url value="/product/viewProduct/${product.productId}" />" role="button"><imgtag:imgTag blob="${product.imagebytes}"  id="${product.productId}"/> </a></td>
+                    <td> <a class="btn btn-default" href="<c:url value="/product/viewProduct/${product.productId}" />" role="button"><imgtag:imgTag blob="${product.imagebytes}"  id="product_${product.productId}"/> </a></td>
                     <td>${product.productName}</td>
                     <td>${product.category.categoryName}</td>
                     <td>${product.productCondition}</td>

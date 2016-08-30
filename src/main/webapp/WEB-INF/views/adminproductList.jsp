@@ -29,7 +29,7 @@
                 </tr>
             <c:forEach items="${products}" var="product">
                 <tr>
-                    <td> <imgtag:imgTag blob="${product.imagebytes}"  id="${product.productId}" height="50px" width="50px"/></td>
+                    <td> <imgtag:imgTag blob="${product.imagebytes}"  id="product_${product.productId}" height="50px" width="50px"/></td>
                     <td>${product.productName}</td>
                     <td>${product.category.categoryName}</td>
                     <td>${product.productCondition}</td>
