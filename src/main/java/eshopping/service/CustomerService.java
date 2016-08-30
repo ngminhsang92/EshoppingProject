@@ -1,10 +1,12 @@
-package eshopping.dao;
+package eshopping.service;
 
 import java.util.List;
 
 import eshopping.domain.Customer;
 
-public interface CustomerDao {
+
+
+public interface CustomerService {
 
     void addCustomer(Customer customer);
 
@@ -15,5 +17,6 @@ public interface CustomerDao {
     Customer getCustomerByUsername(String username);
     
     void updateCustomer(Customer customer);
-}
 
+    void enableDisableCustomer(int customerId);
+}
