@@ -25,7 +25,7 @@ public class HomeController {
         List<Product> products = productService.getRecentProducts();
         List<Category> categories = categoryService.getCategoryList();
         model.addAttribute("products", products);
-        model.addAttribute("categories", categories);
+        //model.addAttribute("categories", categories);
         return "home";
     }
 
