@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ include file="/WEB-INF/views/template/header.jsp" %>
 <%@ taglib prefix="imgtag" uri="/WEB-INF/tlds/img_tag" %>
 
@@ -15,7 +16,9 @@
                 <c:set var="flag" value="active"/>
                 <c:forEach items="${categories}" var="category">
                     <div class="item ${flag}">
-                        <imgtag:imgTag blob="${category.imagebytes}"  id="category_${category.categoryId}" cssClass="first-slide home-image" height="140" width="140"/>
+                        <a class="btn btn-default" href="<c:url value="/product/productList?category=${category.categoryId}" />" role="button">
+                        <imgtag:imgTag blob="${category.imagebytes}"  id="category_${category.categoryId}" cssClass="first-slide home-image" height="auto" width="auto"/>
+                        </a>
                     </div>
                     <c:set var="flag" value=""/>
                 </c:forEach>
@@ -62,7 +65,7 @@
                         <img class="img-circle" src="<c:url value="/resources/images/television.jpg"/>" alt="Instrument Image" width="140" height="140">
                     </a>
 
-                    <h2>Television</h2>
+                    <h2>Telkjad</h2>
 
                 </div>
 

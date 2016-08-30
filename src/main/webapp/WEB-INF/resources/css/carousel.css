@@ -12,12 +12,12 @@ body {
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 .navbar-background {
-	width: 100%;
-	background: #222;
+  width: 100%;
+  background: #183544;
 }
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
-  height: 51;
+  height: 99;
   top: 0;
   right: 0;
   left: 0;
@@ -104,11 +104,11 @@ body {
 @media (min-width: 768px) {
   /* Navbar positioning foo */
   /*.navbar-wrapper {*/
-    /*margin-top: 20px;*/
+  /*margin-top: 20px;*/
   /*}*/
-/*   .navbar-wrapper .container { */
-/*  width: 100%; */
-/*   } */
+  /*   .navbar-wrapper .container { */
+  /*  width: 100%; */
+  /*   } */
   .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
@@ -135,4 +135,8 @@ body {
   .featurette-heading {
     margin-top: 120px;
   }
+}
+
+.navbar-inverse {
+  background-color: #183544;
 }

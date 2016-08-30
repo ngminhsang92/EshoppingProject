@@ -35,10 +35,17 @@ public class ProductController {
     }
 
     @RequestMapping("/search")
-    public String getProductBySearch(@RequestParam(name="searchCondition", required=false ) String searchCondition, Model model){
-        List<Product> products = productService.getProductList();
+    public String getProductBySearch(@RequestParam(name="category", required=false ) String category,
+                                     @RequestParam(name="keyword", required=false ) String keyword, Model model){
+
+        List<Product> products = null;
+        if (category.toLowerCase().equals("all")) {
+            products = productService.getProductList();
+        }else{
+            products = productService.getProductByCategoryId(Integer.valueOf(category));
+        }
         model.addAttribute("products", products);
-        model.addAttribute("searchCondition", searchCondition);
+        model.addAttribute("searchCondition", keyword);
 
         return "productList";
     }

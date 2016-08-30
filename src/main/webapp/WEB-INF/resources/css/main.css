@@ -2,7 +2,7 @@
     height:80%;
     margin: auto;
     margin-top: 10px;
-   /*  margin-bottom: 300px; */
+    /*  margin-bottom: 300px; */
 }
 
 .home-image {
@@ -26,7 +26,7 @@
     text-align: center;
     background: whitesmoke;
 
-   
+
     overflow: hidden;
     font-size:11pt;
     text-overflow: ellipsis;
@@ -47,10 +47,96 @@
 .form-horizontal { width: 70%;   margin-left: auto;   margin-right: auto;}
 .form-horizontal .form-group {  margin-right: 0px;  margin-left: 0px; }
 .btnWidth100 { width : 100px; margin-right:10px}
-.btnWidth120 { width : 120px; margin-right:10px} 
+.btnWidth120 { width : 120px; margin-right:10px}
 .floatLeft { float: left;}
 .successful-box { padding-bottom:30; text-align: center;}
 .loginBox { width: 40%; margin-left: auto;   margin-right: auto;	}
 .outOfStock {
     color: darkRed;
+}
+
+div#nav-search {
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    border-radius: 0\9;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#nav-search .nav-searchbar {
+    display: block;
+    position: relative;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    border-radius: 0\9;
+}
+
+
+#nav-search .nav-left {
+    position: relative;
+    height: 35px;
+}
+.nav-left {
+    position: relative;
+    float: left;
+    width: auto;
+    display: inline-block;
+}
+
+#nav-search .nav-search-scope {
+    background-color: #f3f3f3;
+    background-image: none;
+    border-left: 1px solid #f3f3f3;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#nav-search .nav-search-scope {
+    position: relative;
+    float: left;
+    height: 34px;
+    margin: 0;
+    padding-left: 5px;
+    overflow: hidden;
+    border: 1px solid #cdcdcd;
+    border-top-color: #bdbdbd;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+    border-radius: 0\9;
+    background-position: 0 -532px;
+}
+
+#nav-search .nav-search-dropdown {
+    display: block;
+    top: -1px;
+    left: 0;
+    height: 35px;
+    width: auto;
+    font-family: arial,sans-serif;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    visibility: visible;
+    border: 0;
+    line-height: 35px;
+}
+
+
+
+#nav-search-submit-text.nav-sprite {
+    background-position: -40px -290px;
+    width: 21px;
+    height: 21px;
+    text-indent: -500px;
+    top: 7px;
 }
