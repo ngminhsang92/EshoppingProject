@@ -49,4 +49,11 @@ public class CategoryDao implements ICategoryDao {
         session.delete(domain);
         session.flush();
     }
+
+    public void deleteAll() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("delete from Category");
+        query.executeUpdate();
+        session.flush();
+    }
 }

@@ -1,7 +1,8 @@
 package eshopping.dao.daoImpl;
-
-import java.util.List;
-
+import eshopping.dao.CartItemDao;
+import eshopping.domain.Cart;
+import eshopping.domain.CartItem;
+import eshopping.domain.Product;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,14 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.estore.dao.CartItemDao;
-import com.estore.model.Cart;
-import com.estore.model.CartItem;
-import com.estore.model.Product;
+import java.util.List;
 
 @Repository
 @Transactional
-public class CartItemDaoImpl implements CartItemDao{
+public class CartItemDaoImpl implements CartItemDao {
 
     @Autowired
     private SessionFactory sessionFactory;

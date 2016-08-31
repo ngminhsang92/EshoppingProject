@@ -40,4 +40,8 @@ public class ProductServiceImpl implements IProductService {
     public List<Product> getProductByCategoryId(Integer categoryId) {
         return productDao.getProductByCategoryId(categoryId);
     }
+
+    public void deleteAllProduct() {
+        productDao.deleteAll();
+    }
 }

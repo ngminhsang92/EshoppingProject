@@ -1,14 +1,13 @@
 package eshopping.controller;
 
-import com.estore.model.Cart;
-import com.estore.model.CartItem;
-import com.estore.model.Customer;
-import com.estore.model.Product;
-import com.estore.service.CartItemService;
-import com.estore.service.CartService;
-import com.estore.service.CustomerService;
-import com.estore.service.ProductService;
-
+import eshopping.domain.Cart;
+import eshopping.domain.CartItem;
+import eshopping.domain.Customer;
+import eshopping.domain.Product;
+import eshopping.service.CartItemService;
+import eshopping.service.CartService;
+import eshopping.service.CustomerService;
+import eshopping.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
@@ -32,10 +31,11 @@ public class CartResources {
     private CustomerService customerService;
 
     @Autowired
-    private ProductService productService;
+    private IProductService productService;
 
     @RequestMapping("/{cartId}")
-    public @ResponseBody Cart getCartById(@PathVariable(value = "cartId") int cartId){
+    public @ResponseBody
+    Cart getCartById(@PathVariable(value = "cartId") int cartId){
     	Cart cart = cartService.getCartById(cartId);
     	return cart;
     }

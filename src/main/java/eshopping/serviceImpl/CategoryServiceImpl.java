@@ -33,4 +33,7 @@ public class CategoryServiceImpl implements ICategoryService{
         categoryDao.delete(category);
     }
 
+    public void deleteAllCategory() {
+        categoryDao.deleteAll();
+    }
 }

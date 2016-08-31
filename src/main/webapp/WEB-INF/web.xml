@@ -10,7 +10,9 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/eshopping-servlet.xml,
-            /WEB-INF/applicationContext.xml
+            /WEB-INF/applicationContext.xml,
+            /WEB-INF/checkout-flow-config.xml,
+            /WEB-INF/sender-context.xml
         </param-value>
     </context-param>
 

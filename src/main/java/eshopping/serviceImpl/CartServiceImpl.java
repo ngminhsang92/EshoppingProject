@@ -1,13 +1,13 @@
 package eshopping.serviceImpl;
 
+import eshopping.dao.CartDao;
+import eshopping.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.estore.dao.CartDao;
-
 import eshopping.domain.Cart;
+import org.springframework.stereotype.Service;
 
-public class CartServiceImpl {
-	
+@Service
+public class CartServiceImpl implements CartService{
 
     @Autowired
     private CartDao cartDao;

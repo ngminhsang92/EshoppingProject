@@ -12,4 +12,6 @@ public interface CrudDao<E,I> {
     void edit(E domain);
 
     void delete(E domain);
+
+    void deleteAll();
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/rabbit 
+                           http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+                           
+   <!--  create a rabbit connection factory with specified parameters -->
+   <rabbit:connection-factory id="connectionFactory" 
+                              host="wildboar.rmq.cloudamqp.com" 
+                              virtual-host="vsclmpdj" 
+                              username="vsclmpdj" 
+                              password="Fh5FW3Zng1MGjB1ol_AInxu8RbANNoIA" />
+                              
+   <rabbit:admin connection-factory="connectionFactory" />
+ 
+   <!-- create a bean that sends messages to myExhange
+   <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" />-->
+
+   <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" reply-timeout="2000" routing-key="remoting.binding" exchange="remoting.exchange" />
+   <rabbit:queue name="estore.queue" />
+
+   <rabbit:direct-exchange name="remoting.exchange">
+		<rabbit:bindings>
+			<rabbit:binding queue="estore.queue" key="remoting.binding" />
+		</rabbit:bindings>
+   </rabbit:direct-exchange>
+ </beans>

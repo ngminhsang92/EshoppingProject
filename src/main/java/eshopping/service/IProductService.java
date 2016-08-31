@@ -18,4 +18,6 @@ public interface IProductService {
     List<Product> getRecentProducts();
 
     List<Product> getProductByCategoryId(Integer categoryId);
+
+    void deleteAllProduct();
 }

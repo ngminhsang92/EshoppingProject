@@ -17,4 +17,6 @@ public interface ICategoryService {
 
     void deleteCategory(Category category);
 
+    void deleteAllCategory();
+
 }

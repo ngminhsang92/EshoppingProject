@@ -1,10 +1,8 @@
 package eshopping.dao.daoImpl;
 
-
 import eshopping.dao.CartDao;
 import eshopping.domain.Cart;
 import eshopping.service.CustomerOrderService;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

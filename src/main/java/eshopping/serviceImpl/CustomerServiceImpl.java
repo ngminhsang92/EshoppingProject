@@ -2,12 +2,12 @@ package eshopping.serviceImpl;
 
 import java.util.List;
 
+import eshopping.dao.UserDao;
+import eshopping.integration.JMSSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import eshopping.dao.CustomerDao;
-import eshopping.dao.UserDao;
-import eshopping.integration.JMSSender;
 import eshopping.domain.Customer;
 import eshopping.domain.Users;
 import eshopping.service.CustomerService;

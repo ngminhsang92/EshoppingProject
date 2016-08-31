@@ -70,4 +70,11 @@ public class ProductDao implements IProductDao {
         session.flush();
         return productList;
     }
+
+    public void deleteAll() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("delete from Product");
+        query.executeUpdate();
+        session.flush();
+    }
 }

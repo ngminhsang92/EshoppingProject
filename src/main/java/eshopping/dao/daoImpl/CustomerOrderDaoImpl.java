@@ -2,6 +2,7 @@ package eshopping.dao.daoImpl;
 
 import java.util.List;
 
+import eshopping.domain.CustomerOrder;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

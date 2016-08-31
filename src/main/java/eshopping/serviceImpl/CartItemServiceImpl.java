@@ -1,20 +1,18 @@
 package eshopping.serviceImpl;
 
-
 import eshopping.dao.CartItemDao;
-import eshopping.integration.JMSSender;
 import eshopping.domain.Cart;
 import eshopping.domain.CartItem;
 import eshopping.domain.CustomerOrder;
+import eshopping.integration.JMSSender;
 import eshopping.service.CartItemService;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CartItemServiceImpl implements CartItemService{
+public class CartItemServiceImpl implements CartItemService {
 
     @Autowired
     private CartItemDao cartItemDao;

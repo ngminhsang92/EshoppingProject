@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<var name="order" class="com.estore.model.CustomerOrder" />
+
+	<!-- By default, the first state is the start state. -->
+	<action-state id="validateCart">
+		<evaluate expression="cartDaoImpl.validate(requestParameters.cartId)" result="order.cart" />
+		<transition to="exception" on-exception="java.io.IOException" />
+		<transition to="itemsInfo" />
+	</action-state>
+
+	<view-state id="itemsInfo" view="items_info.jsp" model="order">
+		<transition on="itemsCollected" to="shippingDetail" />
+	</view-state>
+
+	<view-state id="shippingDetail" view="shipping.jsp" model="order">
+		<transition on="shippingCollected" to="confirmation" />
+		<transition on="backToItemsInfoPage" to="itemsInfo" />
+	</view-state>
+
+	<view-state id="confirmation">
+		<transition on="confirmed" to="processOrder" />
+		<transition on="backToShippingDetailPage" to="shippingDetail" />
+	</view-state>
+
+	<action-state id="processOrder">
+		<evaluate expression="cartItemServiceImpl.removeAllCartItems(order)" />
+		<transition to="successful" />
+	</action-state>
+
+	<view-state id="successful" model="order">
+		<transition to="endState" />
+	</view-state>
+
+	<end-state id="endState" />
+
+	<view-state id="exception">
+		<transition to="endState" />
+	</view-state>
+
+	<end-state id="cancelCheckout" view="cancelled.jsp" />
+
+	<global-transitions>
+		<transition on="cancel" to="cancelCheckout" />
+	</global-transitions>
+
+</flow>

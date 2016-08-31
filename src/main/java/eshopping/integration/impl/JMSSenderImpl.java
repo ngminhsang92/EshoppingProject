@@ -1,13 +1,20 @@
-package eshopping.integrationImpl;
+package eshopping.integration.impl;
+/* hornetq
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
 
+//import org.springframework.jms.core.JmsTemplate;
+//import org.springframework.jms.core.MessageCreator;
+*/
+
+import eshopping.integration.JMSSender;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.estore.integration.JMSSender;
-
 @Component
-public class JMSSenderImpl implements JMSSender{
+public class JMSSenderImpl implements JMSSender {
 	//@Autowired hornetq
 	//private JmsTemplate jmsTemplate;
 	
