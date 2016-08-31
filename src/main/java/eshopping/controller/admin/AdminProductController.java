@@ -86,7 +86,7 @@ public class AdminProductController {
 			}
 
 			productService.addProduct(product);
-			path = Paths.get(rootDirectory + "/WEB-INF/resources/images/product" + product.getProductId() + ".png");
+			path = Paths.get(rootDirectory + "/WEB-INF/resources/images/product_" + product.getProductId() + ".png");
 
 			try {
 				File img = new File(path.toString());
@@ -104,6 +104,7 @@ public class AdminProductController {
     public String editProduct(@PathVariable("id") int id,  Model model){
         Product product = productService.getProductById(id);
         model.addAttribute("product", product);
+        populateDefaultModel(model);
         return "admineditProduct";
     }
 
@@ -128,7 +129,7 @@ public class AdminProductController {
 				e.printStackTrace();
 			}
 
-			path = Paths.get(rootDirectory + "/WEB-INF/resources/images/product" + product.getProductId() + ".png");
+			path = Paths.get(rootDirectory + "/WEB-INF/resources/images/product_" + product.getProductId() + ".png");
 
 			try {
 				File img = new File(path.toString());
@@ -147,7 +148,7 @@ public class AdminProductController {
 	@RequestMapping("/product/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable int id, Model model, HttpServletRequest request) {
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		path = Paths.get(rootDirectory + "/WEB-INF/resources/images/product" + id + ".png");
+		path = Paths.get(rootDirectory + "/WEB-INF/resources/images/product_" + id + ".png");
 
 		if (Files.exists(path)) {
 			try {

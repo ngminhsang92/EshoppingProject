@@ -28,7 +28,7 @@
                 </tr>
             <c:forEach items="${categories}" var="category">
                 <tr>
-                    <td> <imgtag:imgTag blob="${category.imagebytes}"  id="${category.categoryId}" height="50px" width="50px"/></td>
+                    <td> <imgtag:imgTag blob="${category.imagebytes}"  id="category_${category.categoryId}" height="50px" width="50px"/></td>
                     <td>${category.categoryName}</td>
                     <td>${category.categoryDescription}</td>
                     <td><a href="<c:url value="/admin/category/editCategory/${category.categoryId}" />" > Edit Category <span class="glyphicon glyphicon-info-sign"></span></a></td>

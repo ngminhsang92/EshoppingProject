@@ -23,12 +23,6 @@
                     <c:set var="flag" value=""/>
                 </c:forEach>
 
-                <div class="item">
-                    <img class="second-slide home-image" src="<c:url value="/resources/images/back2.jpg" />" alt="Second slide">
-                </div>
-                <div class="item">
-                    <img class="third-slide home-image " src="<c:url value="/resources/images/back3.jpg" />" alt="Third slide">
-                </div>
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -56,31 +50,10 @@
                             <imgtag:imgTag blob="${category.imagebytes}"  id="category_${category.categoryId}" height="140" width="140"/>
                         </a>
 
-                        <h2>test</h2>
+                        <h2>${category.categoryName}</h2>
 
                     </div>
                 </c:forEach>
-                <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList" />" role="button">
-                        <img class="img-circle" src="<c:url value="/resources/images/television.jpg"/>" alt="Instrument Image" width="140" height="140">
-                    </a>
-
-                    <h2>Telkjad</h2>
-
-                </div>
-
-
-
-                <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?category=Computers" />" role="button">
-                        <img class="img-circle" src="<c:url value="/resources/images/notebook.jpg"/>" alt="Instrument Image" width="140" height="140">
-                    </a>
-
-                    <h2>Computers</h2>
-
-                </div>
-
-
                 <div class="col-lg-4">
                     <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Cell Phones" />" role="button">
                         <img class="img-circle" src="<c:url value="/resources/images/smartphone.jpg"/>" alt="Instrument Image" width="140" height="140">
@@ -97,7 +70,7 @@
 	             <c:forEach items="${products}" var="product">
 	                   <div class="col-lg-4">
 		                    <a class="btn btn-default" href="<c:url value="/product/viewProduct/${product.productId}" />" role="button">
-		                       <imgtag:imgTag blob="${product.imagebytes}"  id="${product.productId}" height="140" width="140"/>
+		                       <imgtag:imgTag blob="${product.imagebytes}"  id="product_${product.productId}" height="140" width="140"/>
 		                    </a>
 		
 		                    <h2>${product.productName}</h2>

@@ -1,14 +1,11 @@
 package eshopping.domain;
 
-import eshopping.controller.ProductController;
-import org.hibernate.annotations.*;
-import org.hibernate.annotations.Cache;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.spi.ProviderUtil;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.util.ArrayList;
@@ -34,6 +31,9 @@ public class Category implements Serializable {
     @Column(length = 100000)
     //@JsonIgnore
     private Blob imagebytes;
+
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<Product> productList = new ArrayList<Product>();
 
     public int getCategoryId() {
         return categoryId;
@@ -75,20 +75,20 @@ public class Category implements Serializable {
         this.imagebytes = imagebytes;
     }
 
-//    public List<Product> getProductList() {
-//        return productList;
-//    }
-//
-//    public void setProductList(List<Product> productList) {
-//        this.productList = productList;
-//    }
-//
-//    public void addProduct(Product product){
-//        productList.add(product);
-//        product.setCategory(this);
-//    }
-//    public void removeProduct(Product product){
-//        product.setCategory(null);
-//        productList.remove(product);
-//    }
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
+    public void addProduct(Product product){
+        productList.add(product);
+        product.setCategory(this);
+    }
+    public void removeProduct(Product product){
+        product.setCategory(null);
+        productList.remove(product);
+    }
 }

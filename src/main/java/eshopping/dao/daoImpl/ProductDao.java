@@ -35,6 +35,7 @@ public class ProductDao implements IProductDao {
 
     public void add(Product domain) {
         Session session = sessionFactory.getCurrentSession();
+        //domain.getCategory().addProduct(domain);
         session.saveOrUpdate(domain);
         session.flush();
     }

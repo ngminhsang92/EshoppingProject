@@ -19,10 +19,15 @@
             </div>
 
             <div class="form-group">
-                <label for="category">Category</label>
-                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="Television" />Television</label>
-                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="Computers" />Computers</label>
-                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="Cell Phones" />Cell Phones</label>
+                <label class="col-sm-2 control-label">Category</label>
+                <div class="col-sm-5">
+                    <form:select path="category.categoryId" class="form-control">
+                        <form:option value="0" label="--- Select ---" />
+                        <form:options items="${categoryList}" />
+                    </form:select>
+                    <form:errors path="category" class="control-label" />
+                </div>
+                <div class="col-sm-5"></div>
             </div>
 
             <div class="form-group">

@@ -31,15 +31,12 @@
 					<%--</div>--%>
 
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Category</label>
-						<div class="col-sm-5">
-							<form:select path="category.categoryId" class="form-control">
-								<form:option value="0" label="--- Select ---" />
-								<form:options items="${categoryList}" />
-							</form:select>
-							<form:errors path="category" class="control-label" />
-						</div>
-						<div class="col-sm-5"></div>
+						<label for="category">Category</label>
+						<form:select path="category.categoryId" id="category" class="form-control">
+							<form:option value="0" label="--- Select ---" />
+							<form:options items="${categoryList}" />
+						</form:select>
+						<form:errors path="category" class="control-label" />
 					</div>
 
 					<div class="form-group">
