@@ -10,9 +10,24 @@
 					Management</a></li>
 			<li>
 				<div>
-					<a data-toggle="collapse" href="#collapse1">Product Management</a>
+					<a data-toggle="collapse" href="#collapse1">Category Management</a>
 				</div>
 				<div id="collapse1" class="panel-collapse collapse">
+					<div class="panel-body">
+						<a href="<c:url value="/admin/category/addCategory" />">Add
+							Category</a>
+					</div>
+					<div class="panel-body">
+						<a href="<c:url value="/admin/categoryList/all" />">View
+							Categories</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a data-toggle="collapse" href="#collapse2">Product Management</a>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse">
 					<div class="panel-body">
 						<a href="<c:url value="/admin/product/addProduct" />">Add
 							Product</a>
@@ -33,7 +48,11 @@
 				<a class="navbar-brand" href="<c:url value="/" />">MUM E-Store</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="<c:url value="/admin/category/addCategory" />">Add
+					Category</a></li>
+				<li><a href="<c:url value="/admin/categoryList/all" />">View
+					Categories</a></li>
 				<li><a href="<c:url value="/admin/product/addProduct" />">Add
 						Product</a></li>
 				<li><a href="<c:url value="/admin/productList/all" />">View
@@ -50,9 +69,4 @@
 			</div>
 		</div>
 	</nav>
-
-	<div class="page-content-wrapper">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<br> <br>
+</div>
