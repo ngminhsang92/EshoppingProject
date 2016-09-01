@@ -34,12 +34,10 @@ public class CartResources {
     private IProductService productService;
 
     @RequestMapping("/{cartId}")
-    public @ResponseBody
-    Cart getCartById(@PathVariable(value = "cartId") int cartId){
-    	Cart cart = cartService.getCartById(cartId);
-    	return cart;
+    public @ResponseBody Cart getCartById(@PathVariable(value = "cartId") int cartId){
+        Cart cart = cartService.getCartById(cartId);
+        return cart;
     }
-
     @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void addItem (@PathVariable(value = "productId") int productId, @AuthenticationPrincipal User activeUser){

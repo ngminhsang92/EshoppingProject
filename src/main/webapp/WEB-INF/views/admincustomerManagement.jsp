@@ -16,6 +16,7 @@
                 <th>Phone</th>
                 <th>Username</th>
                 <th>Enabled</th>
+                <%--<th>Delete</th>--%>
             </tr>
             </thead>
             <c:forEach items="${customerList}" var="customer">
@@ -34,6 +35,7 @@
 					    <button class="btn btn-xs btn-primary active">OFF</button>
                     </c:if>
                     </a></td>
+                    <%--<td><a href="<c:url value="/admin/customer/delete/${customer.customerId}" />" > Delete<span class="glyphicon glyphicon-trash"></span></a></td>--%>
                 </tr>
             </c:forEach>
         </table>

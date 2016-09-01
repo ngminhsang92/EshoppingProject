@@ -2,11 +2,7 @@ package eshopping.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -49,18 +45,15 @@ public class Customer implements Serializable {
 	 
 	 private boolean enabled;
 	
-	 @OneToOne
-	 @JoinColumn(name="billingAddressId")
+	 @OneToOne(mappedBy = "customer")
 	 @Valid
 	 private BillingAddress billingAddress;
-	 
-	 @OneToOne
-	 @JoinColumn(name="shippingAddress")
+
+	 @OneToOne(mappedBy = "customer")
 	 @Valid
 	 private ShippingAddress shippingAddress;
 	 
-	 @OneToOne
-	 @JoinColumn(name="cartId")
+	 @OneToOne(mappedBy = "customer")
 	 @JsonIgnore
 	 private Cart cart;
 

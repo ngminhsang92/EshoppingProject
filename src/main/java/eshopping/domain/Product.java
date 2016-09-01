@@ -1,5 +1,6 @@
 package eshopping.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.List;
 
 @Entity
 public class Product implements Serializable {
@@ -36,18 +38,25 @@ public class Product implements Serializable {
     private String productManufacturer;
 
     @Transient
-   // @JsonIgnore
+    @JsonIgnore
     private MultipartFile productImage;
 
     @Lob
     @Column(length = 100000)
-    //@JsonIgnore
+    @JsonIgnore
     private Blob imagebytes;
 
-    //@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-   // @JsonIgnore
-   // private List<CartItem> cartItemList;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
 
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
+    }
 
     public int getProductId() {
         return productId;

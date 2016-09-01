@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
-	<var name="order" class="com.estore.model.CustomerOrder" />
+	<var name="order" class="eshopping.domain.CustomerOrder" />
 
 	<!-- By default, the first state is the start state. -->
 	<action-state id="validateCart">

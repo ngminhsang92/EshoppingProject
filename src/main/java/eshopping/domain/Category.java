@@ -1,5 +1,6 @@
 package eshopping.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,14 +26,16 @@ public class Category implements Serializable {
     private String categoryDescription;
 
     @Transient
+    @JsonIgnore
     private MultipartFile coverImage;
 
     @Lob
     @Column(length = 100000)
-    //@JsonIgnore
+    @JsonIgnore
     private Blob imagebytes;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private List<Product> productList = new ArrayList<Product>();
 
     public int getCategoryId() {

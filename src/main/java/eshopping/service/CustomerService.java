@@ -19,4 +19,6 @@ public interface CustomerService {
     void updateCustomer(Customer customer);
 
     void enableDisableCustomer(int customerId);
+
+    void deleteCustomer(Customer customer);
 }

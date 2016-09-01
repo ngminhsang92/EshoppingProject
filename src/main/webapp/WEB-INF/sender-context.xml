@@ -20,11 +20,11 @@
    <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" />-->
 
    <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" reply-timeout="2000" routing-key="remoting.binding" exchange="remoting.exchange" />
-   <rabbit:queue name="estore.queue" />
+   <rabbit:queue name="eshopping.queue" />
 
    <rabbit:direct-exchange name="remoting.exchange">
 		<rabbit:bindings>
-			<rabbit:binding queue="estore.queue" key="remoting.binding" />
+			<rabbit:binding queue="eshopping.queue" key="remoting.binding" />
 		</rabbit:bindings>
    </rabbit:direct-exchange>
  </beans>

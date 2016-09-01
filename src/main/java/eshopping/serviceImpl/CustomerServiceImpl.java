@@ -58,10 +58,13 @@ public class CustomerServiceImpl implements CustomerService{
         customerDao.updateCustomer(customer);
         
         Users user = userDao.getUserByUsername(customer.getUsername());
-        user.setEnabled(customer.isEnabled());
-        userDao.update(user);
+        if (user !=null) {
+            user.setEnabled(customer.isEnabled());
+            userDao.update(user);
+        }
 	}
 
-	
-
-} 
+    public void deleteCustomer(Customer customer) {
+        customerDao.deleteCustomer(customer);
+    }
+}

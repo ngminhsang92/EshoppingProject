@@ -67,5 +67,13 @@ public class AdminHome {
         return "redirect:/admin/customer";
     }
 
+    @RequestMapping("/customer/delete/{id}")
+    public String deleteUser(@PathVariable("id") int id,  Model model){
+        Customer customer = customerService.getCustomerById(id);
+        customerService.deleteCustomer(customer);
+        return "redirect:/admin/customer";
+    }
+
+
 
 } // The End of Class;

@@ -28,13 +28,13 @@
 
                     <br/>
 
-                    <c:set var = "url" scope="page" value="/product/productList" />
+                    <c:set var = "url" scope="page" value="/product/productList/all" />
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <c:set var="url" scope="page" value="/admin/productInventory" />
                     </sec:authorize>
 
                     <p ng-controller="cartCtrl">
-                        <a href="<c:url value = "${url}/all" />" class="btn btn-default">Back</a>
+                        <a href="<c:url value = "${url}" />" class="btn btn-default">Back</a>
                        	<c:if test="${product.unitInStock > 0}">
                         	<a href="#" class="btn btn-warning btn-large" ng-click="addToCart('${product.productId}')"><span class="glyphicon glyphicon-shopping-cart"></span> Order Now</a>
                         	<a href="<spring:url value="/customer/cart" />" class="btn btn-default"><span class="glyphicon glyphicon-hand-right"></span> View Cart</a>

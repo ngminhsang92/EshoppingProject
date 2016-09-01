@@ -2,10 +2,7 @@ package eshopping.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.Cache;
@@ -39,6 +36,7 @@ public class BillingAddress implements Serializable {
 	private String zipCode;
 	
 	@OneToOne
+    @JoinColumn(name="customer_id")
     private Customer customer;
 	
 	public int getBillingAddressId() {

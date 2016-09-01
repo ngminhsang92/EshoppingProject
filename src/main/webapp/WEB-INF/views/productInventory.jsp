@@ -36,7 +36,7 @@
                 <tr>
                     <td><imgtag:imgTag blob="${product.imagebytes}"  id="product_${product.productId}"/></td>
                     <td>${product.productName}</td>
-                    <td>${product.productCategory}</td>
+                    <td>${product.category.categoryName}</td>
                     <td>${product.productCondition}</td>
                     <td>${product.productPrice} USD </td>
                     <td>

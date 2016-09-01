@@ -90,5 +90,13 @@ public class CustomerDaoImpl implements CustomerDao{
         session.flush();
 	}
 
-
+    public void deleteCustomer(Customer customer) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(customer.getBillingAddress());
+        session.delete(customer.getShippingAddress());
+        session.delete(customer.getCart());
+        Query query = session.createQuery("delete from Customer");
+        query.executeUpdate();
+        session.flush();
+    }
 }
