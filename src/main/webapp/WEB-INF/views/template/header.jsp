@@ -101,7 +101,7 @@
 							</div>
 						</div>
 						<div class="input-group">
-							<input type="text" name="keyword" class="form-control" placeholder="<spring:message code="content.search"/>">
+							<input type="text" name="keyword" class="form-control" placeholder="Search..">
 							<span class="input-group-btn">
 			<input type="submit" class="btn btn-default" value="Search"/>
 		  </span>
