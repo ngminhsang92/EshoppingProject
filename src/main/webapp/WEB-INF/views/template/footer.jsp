@@ -2,8 +2,8 @@
 <!-- FOOTER -->
 <footer>
     <br/>
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2016 EA Project, MUM Edu. &middot;</p>
+    <p class="pull-right"><a href="#"><spring:message code="label.footer.backtotop"/></a></p>
+    <p><spring:message code="label.footer.copyright"/> &middot;</p>
 </footer>
 </div>
 

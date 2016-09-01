@@ -55,28 +55,31 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="<c:url value="/" />">Home</a></li>
-							<li><a href="<c:url value="/product/productList/all" />">Products</a></li>
-							<li><a href="<c:url value="/about" />">About Us</a></li>
+							<li><a href="<c:url value="/" />"><spring:message code="label.header.home"/></a></li>
+							<li><a href="<c:url value="/product/productList/all" />"><spring:message code="label.header.product"/></a></li>
+							<li><a href="<c:url value="/about" />"><spring:message code="label.header.aboutus"/></a></li>
 						</ul>
 						<ul class="nav navbar-nav pull-right">
 							<c:if test="${pageContext.request.userPrincipal.name != null}">
 								<li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
 								<c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
-									<li><a href="<c:url value="/customer/cart" />">Cart</a></li>
+									<li><a href="<c:url value="/customer/cart" />"><spring:message code="label.header.cart"/></a></li>
 								</c:if>
 
-								<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
+								<li><a href="<c:url value="/j_spring_security_logout" />"><spring:message code="label.logout"/></a></li>
 
 								<c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
-									<li><a href="<c:url value="/admin" />">Administrator</a></li>
+									<li><a href="<c:url value="/admin" />"><spring:message code="label.administrator"/></a></li>
 								</c:if>
 
 							</c:if>
-
+							<li style="margin-right: -11px;line-height: 50px;color: white;">Language :</li>
+							<li style="margin-right: -14px;"><a href="?lang=en">English</a></li>
+							<li style="line-height: 50px;">|</li>
+							<li style="margin-left: -14px;"><a href="?lang=es">Spanish</a></li>
 							<c:if test="${pageContext.request.userPrincipal.name == null}">
-								<li><a href="<c:url value="/login" />">Login</a></li>
-								<li><a href="<c:url value="/register" />">Register</a></li>
+								<li><a href="<c:url value="/login" />"><spring:message code="label.login"/></a></li>
+								<li><a href="<c:url value="/register" />"><spring:message code="label.register"/></a></li>
 							</c:if>
 						</ul>
 					</div>
@@ -98,7 +101,7 @@
 							</div>
 						</div>
 						<div class="input-group">
-							<input type="text" name="keyword" class="form-control" placeholder="Search for...">
+							<input type="text" name="keyword" class="form-control" placeholder="<spring:message code="content.search"/>">
 							<span class="input-group-btn">
 			<input type="submit" class="btn btn-default" value="Search"/>
 		  </span>

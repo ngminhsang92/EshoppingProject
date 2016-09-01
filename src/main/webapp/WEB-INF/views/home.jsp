@@ -42,7 +42,7 @@
 		<div class="container marketing">
     	<div class="container">
     	<!-- Three columns of text below the carousel -->
-            <h2>Categories:</h2>
+            <h2><spring:message code="label.home.categories"/></h2>
             <div class="row">
                 <c:forEach items="${categories}" var="category">
                     <div class="col-lg-4">
@@ -54,17 +54,9 @@
 
                     </div>
                 </c:forEach>
-                <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Cell Phones" />" role="button">
-                        <img class="img-circle" src="<c:url value="/resources/images/smartphone.jpg"/>" alt="Instrument Image" width="140" height="140">
-                    </a>
-
-                    <h2>Cell Phones</h2>
-
-                </div>
             </div>
             <hr/>
-            <h2>Recent products:</h2>
+            <h2><spring:message code="label.home.recent.product"/></h2>
             <div class="row">
             
 	             <c:forEach items="${products}" var="product">
